@@ -4,15 +4,23 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "postcss css/tailwind.css -o public/css/tailwind.css"
+    "postcss:build": "postcss css/tailwind.css -o public/css/tailwind.css",
+    "postcss:watch": "postcss css/tailwind.css -o public/css/tailwind.css -w",
+    "prettier:check": "prettier --check .",
+    "prettier:write": "prettier --write ."
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "autoprefixer": "^9.7.3",
-    "postcss": "^7.0.25",
-    "postcss-cli": "^6.1.3",
-    "tailwindcss": "^1.1.4"
+    "autoprefixer": "^10.4.13",
+    "cssnano": "^5.1.14",
+    "postcss": "^8.4.21",
+    "postcss-cli": "^10.1.0",
+    "prettier-plugin-tailwindcss": "^0.2.2",
+    "tailwindcss": "^3.2.4"
+  },
+  "devDependencies": {
+    "prettier": "2.8.3"
   }
 }
