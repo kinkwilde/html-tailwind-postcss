@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "postcss:build": "postcss css/tailwind.css -o public/css/tailwind.css",
-    "postcss:watch": "postcss css/tailwind.css -o public/css/tailwind.css -w",
-    "prettier:check": "prettier --check .",
-    "prettier:write": "prettier --write ."
+    "postcss:build": "postcss ./src/css/tailwind.css -o ./static/css/tailwind.css",
+    "postcss:watch": "postcss ./src/css/tailwind.css -o ./static/css/tailwind.css -w",
+    "prettier:check": "prettier --check ./src",
+    "prettier:write": "prettier --write ./src"
   },
   "keywords": [],
   "author": "",

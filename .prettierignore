@@ -1,4 +1,6 @@
-/public/css/tailwind.css
+/static
+
+/src/css/tailwind.css
 
 package-lock.json
 
