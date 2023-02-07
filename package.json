@@ -4,26 +4,28 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npm run prettier:write && npm run copy:html && npm run postcss:build",
-    "copy:html": "copyfiles -u 1 ./src/**/*.html ./static/",
+    "browser": "browser-sync start --server --index ./static/index.html --files ./src/**/*.html --ss ./static",
+    "build": "npm run prettier:write && npm run copy && npm run postcss:build",
+    "copy": "copyfiles -u 1 ./src/**/*.html ./static/",
     "postcss:build": "postcss ./src/css/tailwind.css -o ./static/css/tailwind.css",
     "postcss:watch": "postcss ./src/css/tailwind.css -o ./static/css/tailwind.css -w",
     "prettier:check": "prettier --check ./src",
-    "prettier:write": "prettier --write ./src"
+    "prettier:write": "prettier --write ./src",
+    "watch": "nodemon --watch ./src --ext html,css --exec \"npm run build\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "autoprefixer": "^10.4.13",
+    "browser-sync": "^2.27.11",
     "copyfiles": "^2.4.1",
     "cssnano": "^5.1.14",
+    "nodemon": "^2.0.20",
     "postcss": "^8.4.21",
     "postcss-cli": "^10.1.0",
+    "prettier": "2.8.3",
     "prettier-plugin-tailwindcss": "^0.2.2",
     "tailwindcss": "^3.2.4"
-  },
-  "devDependencies": {
-    "prettier": "2.8.3"
   }
 }
