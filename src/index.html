@@ -7,8 +7,19 @@
     <title>Tailwind Example</title>
     <link rel="stylesheet" href="https://use.typekit.net/otc1nys.css" />
     <link rel="stylesheet" href="./css/tailwind.css" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script type="importmap">
+      {
+        "imports": {
+          "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+        }
+      }
+    </script>
   </head>
-  <body>
+  <body id="app">
+    <div class="tw-container tw-pt-12 tw-text-[#FF0000]">
+      <p class="tw-mb-0 tw-text-center">{{ date }}</p>
+    </div>
     <div class="tw-flex tw-flex-col tw-space-y-8 tw-py-12">
       <!-- START: USP BAR -->
       <div class="tw-container">
@@ -146,7 +157,7 @@
       <!-- START: TITLE -->
       <div class="tw-container">
         <div class="tw-relative tw-flex tw-items-center tw-justify-center">
-          <div class="tw-absolute tw-z-0 tw-h-px tw-w-full tw-bg-black">
+          <div class="tw-absolute tw-z-0 tw-h-[3px] tw-w-full tw-bg-black">
             &nbsp;
           </div>
           <div
@@ -158,5 +169,16 @@
       </div>
       <!-- END: TITLE -->
     </div>
+    <script type="module">
+      import { createApp } from "vue";
+
+      createApp({
+        data() {
+          return {
+            date: new Date(),
+          };
+        },
+      }).mount("#app");
+    </script>
   </body>
 </html>
