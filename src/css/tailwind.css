@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+svg {
+  @apply tw-h-[1em] tw-w-[1em];
+}
