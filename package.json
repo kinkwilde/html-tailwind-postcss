@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "browser": "browser-sync start --server --index ./static/index.html --serveStatic ./static/",
+    "browser": "browser-sync start --server --https --index ./static/index.html --serveStatic ./static/",
     "build": "npm run prettier:write && npm run copy && npm run postcss:build",
     "copy": "copyfiles -a -u 1 ./src/**/*.{html,js} ./static/",
     "postcss:build": "postcss ./src/css/tailwind.css -o ./static/css/tailwind.css",
